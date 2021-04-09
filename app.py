@@ -6,19 +6,29 @@ app = Flask(__name__,template_folder='templates')
 
 
 @app.route('/login', methods=['GET', 'POST'])
-def tiki():
-    try:
-        return render_template('index.html')
-    except TemplateNotFound:
-        abort(404)
-
-
-@app.route('/', methods=['GET', 'POST'])
 def login():
     try:
         return render_template('index.html')
     except TemplateNotFound:
         abort(404)
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    try:
+        return render_template('index.html')
+    except TemplateNotFound:
+        abort(404)
+
+
+
+@app.route('/', methods=['GET', 'POST'])
+def main():
+    try:
+        return render_template('index.html')
+    except TemplateNotFound:
+        abort(404)
+
 #log_id = request.json['user_id']
 #log_pwd = request.json['password']
 #if log_id == 'yl0937':
